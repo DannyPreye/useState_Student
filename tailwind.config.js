@@ -9,6 +9,7 @@ module.exports = {
             },
             colors: {
                 c1a: "#509E2F",
+                c12: "#84BD00",
             },
         },
     },
