@@ -6,23 +6,47 @@ import { Link } from "react-router-dom";
 import HomepageLeft from "../components/HomepageLeft";
 import RecipeSection from "../components/RecipeSection";
 
+
+
 const API_KEY = process.env.REACT_APP_API_KEY;
 const Homepage = () => {
     const [cuisine, setCuisine] = useState([]);
-    const [diet, setDiet] = useState([]);
-    const [bakery, setBakery] = useState([]);
+    const [pasta, setPasta] = useState([]);
+    const [steak, setSteak] = useState([]);
+    
+        const fetchCuisine = async () => {
+            const res = await fetch(
+               ` https://api.spoonacular.com/recipes/random?apiKey=${API_KEY}&number=3`
+                );
+                const data = await res.json();
+                setCuisine(data.recipes);
+            };
 
-    const fetchCuisine = async () => {
-        const res = await fetch(
-            `https://api.spoonacular.com/recipes/random?apiKey=${API_KEY}&number=6`
-        );
-        const data = await res.json();
-        setCuisine(data.recipes);
-    };
+        const fetchPasta = async () => {
+            const res = await fetch(
+              ` https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=pasta&maxFat=25&number=3`
+                );
+                const data = await res.json();
+                    setPasta(data.results);
+                };
+            
+            console.log(pasta)
+            
+        const fetchSteak = async () => {
+            const res = await fetch(
+                ` https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=steak&maxFat=25&number=3`
+                    );
+                    const data = await res.json();
+                    setSteak(data.results);
+                };
+            
 
-    useEffect(() => {
-        fetchCuisine();
-    }, []);
+            
+        useEffect(() => {
+            fetchPasta();
+            fetchCuisine()
+            fetchSteak()
+        }, []);
 
     return (
         <div className=''>
@@ -50,16 +74,21 @@ const Homepage = () => {
                     </div>
                 </div>
             </div>
-            <div className='container mx-auto flex px-[115px] mt-[34px] items-start gap-8 '>
-                <div className='flex-shrink-0'>
+            <div className='container mx-auto flex px-5 mt-[34px] items-start gap-8 '>
+                <div className='flex-shrink-0 mr-[100px]'>
                     <HomepageLeft />
                 </div>
-                <div>
+                <div className="grow mr-[100px] ">
                     <RecipeSection title='Cuisine' recipes={cuisine} />
+                    <RecipeSection title='Pasta' recipes={pasta} />
+                    <RecipeSection title='Steak' recipes={steak} />
+                </div>
+                <div className="mt-[300px]">
+                    <img src="/assets/Fruit.png" alt="" />
                 </div>
             </div>
         </div>
     );
 };
 
-export default Homepage;
+export default Homepage

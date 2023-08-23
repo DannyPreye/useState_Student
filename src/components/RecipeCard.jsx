@@ -16,10 +16,12 @@ const RecipeCard = ({ image, title, country, readyTime, id }) => {
             <div className='flex justify-between items-center'>
                 <div>
                     <h3 className='text-[15px] '>{title}</h3>
-                    <p className='flex text-[10px] items-center object-cover'>
-                        <BiTime />
-                        <span>{readyTime} Minutes</span>
-                    </p>
+                  {
+                    readyTime &&   <p className='flex text-[10px] items-center object-cover'>
+                    <BiTime />
+                    <span>{readyTime} Minutes</span>
+                </p>
+                  }
                 </div>
                 <div></div>
             </div>

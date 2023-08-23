@@ -5,6 +5,10 @@ import { Route, Routes } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import Blog from "./pages/Blog";
 import RecipeDetails from "./pages/RecipeDetails";
+import Footer from "./components/Footer/Footer";
+
+
+
 
 const App = () => {
     return (
@@ -17,6 +21,8 @@ const App = () => {
                     <Route path='/recipe/:id' element={<RecipeDetails />} />
                 </Routes>
             </div>
+            <Footer />
+            
         </>
     );
 };
