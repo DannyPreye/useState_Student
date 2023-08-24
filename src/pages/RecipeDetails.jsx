@@ -26,7 +26,7 @@ const RecipeDetails = () => {
 
     return <div>
         {/* <RecipeDetails   /> */}
-        <DetailSection detail={recipe} />
+        {/* <DetailSection detail={recipe} /> */}
     </div>;
 };
 
