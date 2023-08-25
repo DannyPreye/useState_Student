@@ -5,7 +5,7 @@ const RecipeSection = ({ title, recipes }) => {
     return (
         <div>
             <h2 className='font-montez text-[50px] text-c12'>{title}</h2>
-            <div className=' flex flex-wrap items-stretch gap-[42px]'>
+            <div className=' grid grid-cols-3 gap-[42px]'>
                 {recipes?.map((recipe, id) => (
                     <RecipeCard
                         title={recipe.title}

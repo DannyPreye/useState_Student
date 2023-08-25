@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import DetailSection from "../components/DetailSection";
+// import DetailSection from ".../components/DetailSection";
+
+
 const RecipeDetails = () => {
     const params = useParams();
     const id = params.id;
@@ -15,12 +19,15 @@ const RecipeDetails = () => {
         setRecipe(data);
     };
 
-    console.log(recipe);
+    // console.log(recipe);
     useEffect(() => {
         fetchSingleRecipe();
     }, []);
 
-    return <div>RecipeDetails</div>;
+    return <div>
+        {/* <RecipeDetails   /> */}
+        {/* <DetailSection detail={recipe} /> */}
+    </div>;
 };
 
 export default RecipeDetails;

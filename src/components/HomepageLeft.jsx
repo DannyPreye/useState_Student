@@ -28,18 +28,64 @@ const filterText = [
         links: [
             {
                 name: "Glutten",
-                href: "/category/glutten-free",
+                href: "/category/glutten",
             },
             {
                 name: "Legumes",
-                href: "/category/legumes-free",
+                href: "/category/legumes",
+            },
+            {
+                name: "Grain",
+                href: "/category/grain",
             },
             {
                 name: "Fruits",
-                href: "/category/fruit-free",
+                href: "/category/fruit",
             },
         ],
     },
+    {
+        title: "Cussines",
+        links: [
+            {
+                name: "Assian",
+                href: "/category/assian",
+            },
+            {
+                name: "Italian",
+                href: "/category/italian",
+            },
+            {
+                name: "China",
+                href: "/category/china",
+            },
+            {
+                name: "Thai",
+                href: "/category/thai",
+            },
+        ],
+    },
+    {
+        title: "Goals",
+        links: [
+            {
+                name: "Weightloss",
+                href: "/category/weightloss",
+            },
+            {
+                name: "Freshness",
+                href: "/category/freshness",
+            },
+            {
+                name: "Activeness",
+                href: "/category/activeness",
+            },
+            {
+                name: "Rich Nutritions",
+                href: "/category/rich-nutritions",
+            },
+        ],
+    }
 ];
 const HomepageLeft = ({}) => {
     return (
