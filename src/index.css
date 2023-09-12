@@ -3,14 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.instruction  li{
-    list-style: decimal;
-    
+.instruction li {
+  list-style: decimal;
 }
 
-.instruction  li::marker{
-    list-style: decimal;
-    font-weight: 600;
-    
+.instruction li::marker {
+  list-style: decimal;
+  font-weight: 600;
 }
